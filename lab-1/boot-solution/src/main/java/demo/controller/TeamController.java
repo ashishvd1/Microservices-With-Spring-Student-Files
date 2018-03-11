@@ -12,15 +12,15 @@ import demo.repository.TeamRepository;
 public class TeamController {
 
 	@Autowired TeamRepository teamRepository;
-	
+
 	@RequestMapping("/teams")
 	public Iterable<Team> getTeams() {
 		return teamRepository.findAll();
 	}
-	
+
 	@RequestMapping("/teams/{id}")
 	public Team getTeam(@PathVariable Long id){
 		return teamRepository.findOne(id);
 	}
-	
+
 }
